@@ -16,7 +16,7 @@ class MY_Model extends CI_Model{
     }
 	
 	// get all records
-    function get($order_by, $order, $keyword=""){
+    function get($order_by, $order){
         $table = $this->get_table();
 		$this->db->order_by($order_by, $order);
 		
@@ -35,7 +35,7 @@ class MY_Model extends CI_Model{
     }
 	
 	// get single record from id
-    function get_where($id){
+    function get_where_id($id){
         $table = $this->get_table();
         $this->db->where($this->id_field, $id);
         $query=$this->db->get($table);
