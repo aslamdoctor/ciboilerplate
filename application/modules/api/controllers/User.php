@@ -12,6 +12,42 @@ class User extends REST_Controller {
 	{
 		parent::__construct();
 	}
+
+	public function test_get(){
+		$this->response(array(
+			'name' => 'Aslam',
+			'email' => 'aslam.doctor@gmail.com'
+		)); 
+	}
+	
+	public function test_post(){
+		$foo = $this->post('foo');
+		$bar = $this->post('bar');
+		$array_variable = $this->post('array_variable');
+		$this->response(array(
+			'foo' => $foo.' POSTED',
+			'bar' => $bar.' POSTED',
+			'array_variable' => $array_variable
+		)); 
+	}
+	
+	public function test_put(){
+		$foo = $this->PUT('foo');
+		$bar = $this->PUT('bar');
+		$array_variable = $this->PUT('array_variable');
+		$this->response(array(
+			'foo' => $foo.' PUT DONE',
+			'bar' => $bar.' PUT DONE',
+			'array_variable' => $array_variable
+		)); 
+	}
+	
+	public function test_delete(){
+		$this->response(array(
+			'name' => 'Aslam DELETE',
+			'email' => 'aslam.doctor@gmail.com DELETE'
+		)); 
+	}
 	
 	public function index_get()
 	{
